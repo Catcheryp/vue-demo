@@ -18,5 +18,3 @@ npm install style-loader --save
 <br>
 
 ### 效果图
-
-![vuematerial drawer](https://image.fight0days.cn/20210207092915.png)
