@@ -1,4 +1,4 @@
-### 安装
+### vue-material 依赖
 
 ```
 npm install vue-material --save
@@ -17,4 +17,13 @@ npm install style-loader --save
 
 <br>
 
-### 效果图
+###  运行
+
+运行本项目直接执行下面命令即可
+
+```
+npm install
+
+npm run dev
+```
+

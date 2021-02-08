@@ -44,26 +44,77 @@
 
       <md-app-content>
         <!-- Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error quibusdam, non molestias et! Earum magnam, similique, quo recusandae placeat dicta asperiores modi sint ea. -->
-        <Media>
-        </Media>      
+        <Card1></Card1>  
+        <Card4></Card4>    
+        <Card5>
+          <div>
+              <input v-model="message">
+              <input :value="message" @input="handleChange">
+                  {{message}} {{message + message}}
+                  <div :id="message"></div>
+                  <!-- <ul>
+                      <todo-item v-for="item in list" :title="item.title" :del="item.del"></todo-item>
+                  </ul> -->
+                  <todo-list>
+                      <todo-item @delete="handleDelete" v-for="(item, index) in list" :key="index" :title="item.title" :del="item.del">
+                          <template v-slot:pre-icon="{value}">
+                              <span>前置图标 {{value}}</span>
+                          </template>
+                      </todo-item>
+                  </todo-list>
+            </div>  
+        </Card5>    
       </md-app-content>
     </md-app>
   </div>
 </template>
 
 <script>
-  import Media from './components/Card'
+  import Card1 from './components/Card1'
+  import Card2 from './components/Card2'
+  import Card3 from './components/Card3'
+  import Card4 from './components/Card4'
+  import Card5 from './components/Card5'
+  import TodoList from './components/TodoList.vue'
+  import TodoItem from './components/TodoItem.vue'
+
   export default {
     components: {
-      Media
+      Card1,
+      Card2,
+      Card3,
+      Card4,
+      Card5,
+      TodoItem,
+      TodoList
     },
     name: 'PersistentFull',
-    data: () => ({
-      menuVisible: false
-    }),
+    // data: () => ({
+    //   menuVisible: false, 
+    // }),
+    data() {
+      return {
+        menuVisible: false,
+        message: 'hello world',
+        list: [{
+            title: '课程1',
+            del: false
+        }, {
+            title: '课程2',
+            del: true
+        }],
+      }
+    },
     methods: {
       toggleMenu () {
         this.menuVisible = !this.menuVisible
+      },
+      handleChange(e) {
+      this.message = e.target.value
+      },
+      handleDelete(val) {
+          // eslint-disable-next-line no-console
+          console.log('handleDelete', val)
       }
     }
   }
