@@ -1,5 +1,5 @@
 <template>
-    <md-card>
+    <md-card md-with-hover>
       <md-card-header>
         <md-card-header-text>
           <div class="md-title">Media card</div>
