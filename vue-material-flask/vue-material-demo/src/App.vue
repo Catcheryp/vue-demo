@@ -5,7 +5,9 @@
         <md-button class="md-icon-button" @click="toggleMenu" v-if="!menuVisible">
           <md-icon>menu</md-icon>
         </md-button>
-        <span class="md-title">Catcheryp demo</span>
+        <span class="md-title" id="appTitle">
+          <router-view/>
+        </span>
       </md-app-toolbar>
 
       <md-app-drawer :md-active.sync="menuVisible" md-persistent="full">

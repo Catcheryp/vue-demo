@@ -2,3 +2,5 @@
 **/node_modules
 
 vue-flask/flask-vue-crud/env
+
+vue-material-flask/env
